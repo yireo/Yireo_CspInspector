@@ -30,6 +30,7 @@ class FetchCspHeader
 
         $cspHeaderData = [];
         $cspHeaderData['url'] = $url;
+        $headerValues = [];
 
         if ($response->hasHeader('Content-Security-Policy-Report-Only')) {
             $cspHeaderData['reporting'] = 1;
