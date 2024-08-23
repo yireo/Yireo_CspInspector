@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="yireo_cspinspector_inspect" xsi:type="object">
+                    Yireo\CspInspector\Console\Command\InspectCommand
+                </item>
+                <item name="yireo_cspinspector_inspect_policy" xsi:type="object">
+                    Yireo\CspInspector\Console\Command\InspectPolicyCommand
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>
