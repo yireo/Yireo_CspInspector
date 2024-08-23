@@ -3,6 +3,8 @@
 
 ### Installation
 ```bash
+composer require --dev yireo/magento2-csp-inspector
+bin/magento module:enable Yireo_CspInspector
 ```
 
 ### Usage
