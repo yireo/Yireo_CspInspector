@@ -21,6 +21,8 @@ class FetchCspHeader
         $url = $this->storeManager->getDefaultStoreView()->getUrl().$url;
 
         $client = $this->clientFactory->create();
+        $client->setDefaultOption('verify', false);
+
         $response = $client->request(
             'GET', $url
         );
