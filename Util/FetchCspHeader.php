@@ -19,6 +19,9 @@ class FetchCspHeader
     public function fetch(string $url): ?CspHeader
     {
         $url = $this->storeManager->getDefaultStoreView()->getUrl().$url;
+        if (preg_match('#//$#', $url)) {
+            $url = rtrim($url, '/').'/';
+        }
 
         $client = $this->clientFactory->create();
         $response = $client->request(
