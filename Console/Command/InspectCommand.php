@@ -36,7 +36,7 @@ class InspectCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $url = $input->getArgument('url');
+        $url = (string)$input->getArgument('url');
 
         $cspHeader = $this->fetchCspHeader->fetch($url);
         if (empty($cspHeader)) {

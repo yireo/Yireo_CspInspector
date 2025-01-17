@@ -18,7 +18,7 @@ class FetchCspHeader
 
     public function fetch(string $url): ?CspHeader
     {
-        if (false === preg_match('#^(http|https)://#', $url)) {
+        if (!preg_match('#^(http|https)://#', $url)) {
             $url = $this->storeManager->getDefaultStoreView()->getUrl().$url;
         }
 
