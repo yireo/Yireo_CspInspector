@@ -1,20 +1,20 @@
 {
-  "name": "yireo/magento2-csp-inspector",
-  "version": "1.0.5",
-  "description": "Magento module to help with inspecting CSP headers",
-  "type": "magento2-module",
-  "require": {
-      "magento/framework": "^102.0|^103.0"
-  },
-  "license": [
-    "OSL-3.0"
-  ],
-  "autoload": {
-    "files": [
-      "registration.php"
+    "name": "yireo/magento2-csp-inspector",
+    "version": "1.0.5",
+    "description": "Magento module to help with inspecting CSP headers",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "^102.0|^103.0"
+    },
+    "license": [
+        "OSL-3.0"
     ],
-    "psr-4": {
-      "Yireo\\CspInspector\\": ""
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Yireo\\CspInspector\\": ""
+        }
     }
-  }
 }
