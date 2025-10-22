@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Yireo\CspInspector\Console\Command;
 
-use Composer\Console\Input\InputArgument;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Yireo\CspInspector\Util\FetchCspHeader;
