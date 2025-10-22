@@ -1,0 +1,11 @@
+{
+    "sequence": [
+        "Magento_Csp"
+    ],
+    "modules": [
+        "Magento_Csp"
+    ],
+    "components": [],
+    "config": [],
+    "tests": []
+}
