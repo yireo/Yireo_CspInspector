@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.6] - 01 June 2026
+### Fixed
+- Make commands Symfony 7 compliant
+
 ## [1.0.5] - 22 October 2025
 ### Fixed
 - Copy generic CI/CD files
