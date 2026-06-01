@@ -19,7 +19,7 @@ class InspectCommand extends Command
         parent::__construct($name);
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName('csp:inspect');
         $this->setDescription('Inspect a specific storefront URL for all CSP headers');
@@ -34,7 +34,7 @@ class InspectCommand extends Command
      *
      * @return void
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $url = (string)$input->getArgument('url');
 

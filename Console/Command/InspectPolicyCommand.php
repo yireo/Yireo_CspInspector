@@ -19,7 +19,7 @@ class InspectPolicyCommand extends Command
         parent::__construct($name);
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName('csp:inspect:policy');
         $this->setDescription('Inspect a specific storefront URL for a CSP policy');
@@ -35,7 +35,7 @@ class InspectPolicyCommand extends Command
      *
      * @return void
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $policy = $input->getArgument('policy');
         $url = (string)$input->getArgument('url');
