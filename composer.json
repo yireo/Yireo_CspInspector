@@ -4,7 +4,12 @@
     "description": "Magento module to help with inspecting CSP headers",
     "type": "magento2-module",
     "require": {
-        "magento/framework": "^102.0|^103.0"
+        "ext-pcre": "*",
+        "guzzlehttp/guzzle": "^6.0|^7.0",
+        "magento/framework": "^102.0|^103.0",
+        "magento/module-csp": "^100.0",
+        "magento/module-store": "^101.1",
+        "symfony/console": "^5.0|^6.0|^7.0|^8.0"
     },
     "license": [
         "OSL-3.0"

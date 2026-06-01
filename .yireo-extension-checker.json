@@ -1,0 +1,6 @@
+{
+  "ignore": [
+    "Magento_Csp",
+    "magento/module-csp"
+  ]
+}
