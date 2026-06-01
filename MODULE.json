@@ -1,9 +1,11 @@
 {
     "sequence": [
-        "Magento_Csp"
+        "Magento_Csp",
+        "Magento_Store"
     ],
     "modules": [
-        "Magento_Csp"
+        "Magento_Csp",
+        "Magento_Store"
     ],
     "components": [],
     "config": [],
