@@ -12,6 +12,11 @@
         "symfony/console": "^5.0 | ^6.0 | ^7.0",
         "php": ">=8.2 <8.6"
     },
+    "require-dev": {
+        "guzzlehttp/psr7": "^1.0 || ^2.0",
+        "phpunit/phpunit": "^9.5 || ^10.5",
+        "yireo/magento2-integration-test-helper": "~0.0"
+    },
     "license": [
         "OSL-3.0"
     ],
