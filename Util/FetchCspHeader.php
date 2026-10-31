@@ -50,7 +50,7 @@ class FetchCspHeader
 
         foreach ($headerValues as $headerValue) {
             foreach (explode(';', $headerValue) as $headerValuePart) {
-                $policyParts = explode(' ', trim($headerValuePart));
+                $policyParts = explode(' ', trim($headerValuePart, " \f\n\r\t\v\x00"));
                 $policyName = array_shift($policyParts);
                 if (empty($policyName)) {
                     continue;
