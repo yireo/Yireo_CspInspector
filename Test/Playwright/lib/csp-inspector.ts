@@ -91,7 +91,7 @@ function getMagentoCli(): string[] | null {
     }
 
     if (process.env.PHP_CONTAINER) {
-        return ['docker', 'exec', process.env.PHP_CONTAINER, 'php', '/tmp/magento/bin/magento'];
+        return ['docker', 'exec', '-u', 'root', process.env.PHP_CONTAINER, 'php', '/tmp/magento/bin/magento'];
     }
 
     const magentoRoot = process.env.MAGENTO_ROOT;
