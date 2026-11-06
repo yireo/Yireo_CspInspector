@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.7] - 06 November 2026
+### Fixed
+- Compare CLI output with browser CSP headers for Luma and Hyva
+- Pass explicit characters to trim() for PHP 8.6 compatibility
+- Set dependency with `symfony/console` to v5, v6 or v7
+
 ## [1.0.6] - 01 June 2026
 ### Fixed
 - Make commands Symfony 7 compliant
