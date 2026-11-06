@@ -9,7 +9,11 @@
     ],
     "components": [],
     "config": [],
-    "tests": [],
+    "tests": {
+        "unit": 15,
+        "integration": 7,
+        "functional": 0
+    },
     "module_name": "Yireo_CspInspector",
     "composer_name": "yireo/magento2-csp-inspector",
     "php_versions": [
