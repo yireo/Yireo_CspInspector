@@ -12,4 +12,16 @@
             </argument>
         </arguments>
     </type>
+
+    <type name="Yireo\CspInspector\Console\Command\InspectCommand">
+        <arguments>
+            <argument name="fetchCspHeader" xsi:type="object">Yireo\CspInspector\Util\FetchCspHeader\Proxy</argument>
+        </arguments>
+    </type>
+
+    <type name="Yireo\CspInspector\Console\Command\InspectPolicyCommand">
+        <arguments>
+            <argument name="fetchCspHeader" xsi:type="object">Yireo\CspInspector\Util\FetchCspHeader\Proxy</argument>
+        </arguments>
+    </type>
 </config>
