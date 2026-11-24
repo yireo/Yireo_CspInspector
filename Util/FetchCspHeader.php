@@ -5,6 +5,7 @@ namespace Yireo\CspInspector\Util;
 use GuzzleHttp\ClientFactory;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\RedirectMiddleware;
+use Magento\Store\Model\Store;
 use Magento\Store\Model\StoreManagerInterface;
 use RuntimeException;
 use Yireo\CspInspector\Model\CspHeader;
@@ -65,7 +66,7 @@ class FetchCspHeader
     {
         if (!preg_match('#^https?://#i', $url)) {
             $store = $this->storeManager->getDefaultStoreView();
-            if ($store === null) {
+            if (!$store instanceof Store) {
                 throw new RuntimeException('No default store view found to resolve a relative URL');
             }
 
