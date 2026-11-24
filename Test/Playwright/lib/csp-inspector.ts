@@ -107,7 +107,7 @@ export function runCli(...args: string[]): CliResult {
     test.skip(cli === null, 'No way to run bin/magento: set MAGENTO_CLI or MAGENTO_ROOT');
 
     const [command, ...commandArgs] = cli!;
-    const result = spawnSync(command, [...commandArgs, ...args, '--no-ansi'], {encoding: 'utf8', timeout: 60_000});
+    const result = spawnSync(command, [...commandArgs, ...args, '--insecure', '--no-ansi'], {encoding: 'utf8', timeout: 60_000});
     if (result.error) {
         throw result.error;
     }

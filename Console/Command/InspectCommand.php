@@ -5,43 +5,28 @@ namespace Yireo\CspInspector\Console\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Yireo\CspInspector\Util\FetchCspHeader;
 
-class InspectCommand extends Command
+class InspectCommand extends AbstractInspectCommand
 {
-    public function __construct(
-        private FetchCspHeader $fetchCspHeader,
-        ?string $name = null
-    ) {
-        parent::__construct($name);
-    }
-
     protected function configure(): void
     {
         $this->setName('csp:inspect');
         $this->setDescription('Inspect a specific storefront URL for all CSP headers');
-        $this->addArgument('url', InputArgument::OPTIONAL, 'URL', '/');
+        $this->addFetchArguments();
     }
 
     /**
-     * CLI command description.
-     *
      * @param InputInterface $input
      * @param OutputInterface $output
      *
-     * @return void
+     * @return int
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $url = (string)$input->getArgument('url');
-
-        $cspHeader = $this->fetchCspHeader->fetch($url);
-        if (empty($cspHeader)) {
-            $output->writeln('No CSP headers found for URL '.$url);
-
+        $cspHeader = $this->fetchCspHeader($input, $output);
+        if ($cspHeader === null) {
             return Command::FAILURE;
         }
 
@@ -49,22 +34,40 @@ class InspectCommand extends Command
 
         $table->addRow([
             'URL',
-            $cspHeader->getUrl(),
+            $this->escape($cspHeader->getUrl()),
         ]);
+
+        if ($cspHeader->getStatusCode() !== 200) {
+            $table->addRow([
+                'Status',
+                (string)$cspHeader->getStatusCode(),
+            ]);
+        }
 
         $table->addRow([
             'Mode',
             $cspHeader->isReporting() ? 'Reporting Mode' : 'Strict Mode',
         ]);
 
-        $policies = array_keys($cspHeader->getPolicies());
         $table->addRow([
             'Policies',
-            implode("\n", $policies)
+            $this->renderPolicyNames($cspHeader->getPolicies()),
         ]);
+
+        if (!empty($cspHeader->getReportOnlyPolicies())) {
+            $table->addRow([
+                'Report-Only Policies',
+                $this->renderPolicyNames($cspHeader->getReportOnlyPolicies()),
+            ]);
+        }
 
         $table->render();
 
         return Command::SUCCESS;
+    }
+
+    private function renderPolicyNames(array $policies): string
+    {
+        return implode("\n", array_map(fn ($name) => $this->escape((string)$name), array_keys($policies)));
     }
 }

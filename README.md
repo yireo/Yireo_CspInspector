@@ -37,6 +37,14 @@ Report all policy values for the policy `script-src` on the homepage:
 bin/magento csp:inspect:policy script-src 
 ```
 
+### Options
+Both commands support the following options:
+
+- `--insecure` (`-k`): Skip TLS certificate verification, for instance for a local environment with a self-signed certificate. Certificates are verified by default.
+- `--follow-redirects`: Follow HTTP redirects (up to 5) and inspect the final URL. By default, redirects are not followed: Instead, the redirect status and location are reported.
+
+When a response contains both an enforced `Content-Security-Policy` header and a `Content-Security-Policy-Report-Only` header, both sets of policies are reported.
+
 ## Current status
 
 <!-- badges.test.start -->
