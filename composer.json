@@ -14,12 +14,11 @@
     },
     "require-dev": {
         "guzzlehttp/psr7": "^1.0 || ^2.0",
+        "loki/magento2-functional-tests": "@dev",
         "phpunit/phpunit": "^9.5 || ^10.5",
         "yireo/magento2-integration-test-helper": "~0.0"
     },
-    "license": [
-        "OSL-3.0"
-    ],
+    "license": "OSL-3.0",
     "autoload": {
         "files": [
             "registration.php"
