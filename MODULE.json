@@ -10,7 +10,7 @@
     "components": [],
     "config": [],
     "tests": {
-        "unit": 15,
+        "unit": 35,
         "integration": 7,
         "functional": 0
     },
