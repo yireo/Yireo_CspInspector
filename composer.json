@@ -1,6 +1,6 @@
 {
     "name": "yireo/magento2-csp-inspector",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Magento module to help with inspecting CSP headers",
     "type": "magento2-module",
     "require": {
